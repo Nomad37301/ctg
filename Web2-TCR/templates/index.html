@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TecArt CTF — Web Challenge #2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span class="topbar-brand">TecArt CTF 2026 · Web #2</span>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+      <span class="toggle-icon">☀️</span>
+      <span id="themeLabel">Light Mode</span>
+    </button>
+  </div>
+
+  <!-- LOGIN CARD -->
+  <div class="card" id="loginCard">
+    <span class="card-badge">Login Required</span>
+    <h1>Masuk ke Panel</h1>
+    <p class="subtitle">Kamu harus login dulu untuk melanjutkan.</p>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="masukkan username" autocomplete="off" />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="masukkan password" />
+    </div>
+
+    <button class="btn-login" id="loginBtn" onclick="doLogin()">Login</button>
+    <div class="error-msg" id="errorMsg">Username atau password salah.</div>
+  </div>
+
+  <!-- DASHBOARD (after login) -->
+  <div class="dashboard" id="dashboard">
+    <div class="dash-header">
+      <div class="user-chip">
+        <div class="avatar" id="avatarText">U</div>
+        <span id="usernameDisplay">user</span>
+      </div>
+      <button class="btn-logout" onclick="doLogout()">Logout</button>
+    </div>
+
+    <!-- WELCOME -->
+    <div class="welcome-card">
+      <h2>Selamat datang 👋</h2>
+      <p>
+        Kamu berhasil login. Tapi sepertinya halaman ini... biasa aja.<br>
+        Tidak ada yang spesial di sini — atau mungkin ada?
+      </p>
+    </div>
+
+    <!-- LIGHT MODE CLUE -->
+    <div class="clue-card-light" id="clueLightCard">
+      <p class="clue-loud">KOK SILAU YA, REDUPIN DONG CAHAYA NYA !!!!</p>
+    </div>
+
+    <!-- DARK MODE CLUE -->
+    <div class="clue-card-dark" id="clueDarkCard">
+      <div class="clue-title">💡 Petunjuk</div>
+      <p>
+        Nah, enak kan gelapnya. Oh iya, ngomong-ngomong...<br><br>
+        Server ini nyimpen <strong>cookie</strong> buat ngenalin kamu.
+        Cookie-nya namanya <code>role</code>, isinya di-encode pake <code>Base64</code> sekali aja, ga ada yang ribet.<br><br>
+        Coba deh cek, siapa tahu ada <em>role lain</em> yang bisa buka sesuatu yang lebih menarik.
+      </p>
+    </div>
+
+    <!-- ADMIN PANEL — diisi JS dari respons server, flag TIDAK ada di sini -->
+    <div class="admin-panel" id="adminPanel">
+      <span class="admin-badge">✅ Admin Access Granted</span>
+      <h2>Admin Panel</h2>
+      <p style="font-size:0.88rem; color:var(--text2); line-height:1.7;">
+        Selamat! Kamu berhasil memanipulasi cookie dan mendapatkan akses admin.<br>
+        Ini hadiahnya:
+      </p>
+      <div class="flag-box" id="flagBox"><!-- flag dari server --></div>
+    </div>
+
+    <p class="page-footer">good luck. — TecArt CTF 2026</p>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

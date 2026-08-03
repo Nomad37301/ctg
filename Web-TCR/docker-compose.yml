@@ -1,0 +1,7 @@
+services:
+  web1-tcr:
+    build: .
+    container_name: web1-tcr
+    ports:
+      - "8001:80"
+    restart: unless-stopped

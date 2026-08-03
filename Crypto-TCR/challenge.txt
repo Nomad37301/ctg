@@ -1,0 +1,28 @@
+==================================================
+  CRYPTO CHALLENGE #1 - "Caesar's Cousin"
+  Difficulty: Very Easy 
+==================================================
+
+Halo hacker! Gue nemuin pesan misterius ini...
+Katanya ada flag tersembunyi di dalamnya.
+
+Pesan terenkripsi:
+--------------------------------------------------
+Uryyb! Wvxn xnzh ovfn onpn vav, vgh nnegvxry xnzh fhqnu orare!
+
+Synt-aln nqn qv fvav:
+
+grpneg{e0g_guvegrra_vf_rnfl_crnfna}
+
+--------------------------------------------------
+
+HINT: Julius Caesar punya saudara yang lebih malas.
+      Dia cuma geser 13, bukan 3 ;)
+
+      Tools gratis: https://rot13.com
+      Atau langsung decode di terminal:
+      echo "teks" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+==================================================
+Flag format: tecart{...}
+==================================================

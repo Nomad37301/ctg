@@ -1,0 +1,7 @@
+services:
+  web2-tcr:
+    build: .
+    container_name: web2-tcr
+    ports:
+      - "8002:8082"
+    restart: unless-stopped
